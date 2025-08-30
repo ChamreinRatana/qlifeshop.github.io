@@ -1,170 +1,95 @@
-<!--
-  Minecraft Lobby Shop - Single-file HTML template
-  - Replace placeholder images (assets/) with your own images
-  - Replace PAYMENT_LINKS with real payment endpoints or integrate with a payment provider
-  - To host: put this file as index.html on GitHub Pages / Netlify / Vercel / any static host
-  - Author: ChatGPT
---><!doctype html>
-
+<!DOCTYPE html>
 <html lang="km">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>QLIFE SHOP MAP</title>
-  <meta name="description" content="លក់ Lobby Minecraft | IP និង Port សម្រាប់សេវា Minecraft ">
-  <style>
-    :root{--accent:#3aa655;--dark:#0f1720;--muted:#b7c0c8}
-    *{box-sizing:border-box;font-family:Inter, system-ui, Arial, sans-serif}
-    body{margin:0;background:linear-gradient(180deg,#e8f7ff 0%, #f7fbf7 100%);color:#0b1320}
-    header{background:linear-gradient(90deg,#0b3b2f,#0b4a6f);color:white;padding:28px 20px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(45deg,#90ee90,#6fbfdb);display:flex;align-items:center;justify-content:center;font-weight:800}
-    .container{max-width:1100px;margin:28px auto;padding:0 16px}
-    .hero{display:flex;gap:20px;align-items:center}
-    .hero .left{flex:1}
-    .hero h1{margin:0 0 8px;font-size:28px}
-    .hero p{margin:0;color:var(--muted)}
-    .ipcard{background:white;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(13,22,30,0.08);display:inline-block;margin-top:12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:22px}
-    .card{background:white;border-radius:12px;padding:12px;box-shadow:0 6px 16px rgba(13,22,30,0.06);display:flex;flex-direction:column}
-    .card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-    .card h3{margin:10px 0 6px;font-size:16px}
-    .price{font-weight:700;color:var(--accent)}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;cursor:pointer}
-    footer{text-align:center;color:var(--muted);padding:24px;margin-top:28px}
-    /* modal */
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.4)}
-    .modal.open{display:flex}
-    .modal .panel{background:white;padding:18px;border-radius:12px;max-width:460px;width:100%}
-    .field{margin-bottom:10px}
-    input[type=text],input[type=email],select,textarea{width:100%;padding:8px;border-radius:8px;border:1px solid #e4e8ee}
-    .small{font-size:13px;color:var(--muted)}
-    .flex{display:flex;gap:8px}
-    @media (max-width:700px){header{flex-direction:column;gap:12px;align-items:flex-start}.hero{flex-direction:column}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLIFE SHOP MAP</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Background style */
+        body {
+            background: url('https://i.ibb.co/4N9xFfY/angkor-minecraft.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* Title style */
+        .title {
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Container for shop buttons or info */
+        .container {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 165, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="logo">MK</div>
-      <div>
-        <div style="font-weight:700">KHMER KPC</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.85)">Minecraft Lobby Marketplace</div>
-      </div>
+    <div class="title">QLIFE SHOP MAP</div>
+
+    <div class="container">
+        <a href="#" class="button">Lobby 1</a>
+        <a href="#" class="button">Lobby 2</a>
+        <a href="#" class="button">Lobby 3</a>
     </div>
-    <div class="ipcard">
-      <div style="font-size:13px;color:var(--muted)">Server IP</div>
-      <div style="font-weight:800">mc.khmer-kpc.com</div>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">Port: <span style="font-weight:700">19132</span></div>
-    </div>
-  </header>  <main class="container">
-    <section class="hero">
-      <div class="left">
-        <h1>លក់ Lobby Minecraft — ប្លុក, បរិយាកាស និង ការកំណត់ត្រា</h1>
-        <p>Preview, buy, និងទាញយក Lobby ថ្មីៗសម្រាប់សឺរ្វដែលអាចដំឡើងនៅលើ Minecraft Bedrock/Java (schematic / zip)</p>
-        <div style="margin-top:12px">
-          <a class="btn" id="btn-contact">ទំនាក់ទំនងយើង</a>
-        </div>
-      </div>
-      <div style="width:320px">
-        <img src="https://placehold.co/600x360?text=Minecraft+Angkor+Preview" alt="preview" style="width:100%;border-radius:12px;box-shadow:0 8px 20px rgba(11,18,32,0.06)">
-      </div>
-    </section><section style="margin-top:26px">
-  <div style="display:flex;align-items:center;justify-content:space-between">
-    <h2 style="margin:0">Products</h2>
-    <div class="small">Category: Lobby / Spawn / Hub</div>
-  </div>
 
-  <div class="grid" id="productGrid">
-    <!-- Product cards inserted by JS -->
-  </div>
-</section>
-
-<section style="margin-top:28px">
-  <h3>Payment Methods</h3>
-  <div class="small">ABA | Wing | TrueMoney | PayPal (set your payment links in the HTML)</div>
-  <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-    <div style="background:white;padding:10px;border-radius:10px;box-shadow:0 4px 12px rgba(10,16,22,0.05)">ABA QR</div>
-    <div style="background:white;padding:10px;border-radius:10px;box-shadow:0 4px 12px rgba(10,16,22,0.05)">Wing</div>
-    <div style="background:white;padding:10px;border-radius:10px;box-shadow:0 4px 12px rgba(10,16,22,0.05)">PayPal</div>
-  </div>
-</section>
-
-  </main>  <footer>
-    © <span id="year"></span> KHMER KPC • Support: <a href="https://t.me/yourtelegram" target="_blank">Telegram</a>
-  </footer>  <!-- Modal: Purchase -->  <div class="modal" id="modal">
-    <div class="panel">
-      <h3 id="modalTitle">Buy Lobby</h3>
-      <div class="small" id="modalDesc">Select payment and provide contact.</div>
-      <div style="margin-top:12px">
-        <div class="field">
-          <label class="small">ឈ្មោះ</label>
-          <input id="buyerName" type="text" placeholder="ឈ្មោះរបស់អ្នក">
-        </div>
-        <div class="field">
-          <label class="small">អ៊ីមែល / Telegram</label>
-          <input id="buyerContact" type="text" placeholder="Email ឬ Telegram">
-        </div>
-        <div class="field">
-          <label class="small">Payment method</label>
-          <select id="paymentMethod">
-            <option>ABA</option>
-            <option>Wing</option>
-            <option>TrueMoney</option>
-            <option>PayPal</option>
-          </select>
-        </div>
-        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
-          <a class="btn" id="confirmBuy">Confirm & Deliver</a>
-          <a class="btn" id="closeModal" style="background:#e3e6ea;color:#0b1320">Cancel</a>
-        </div>
-        <div style="margin-top:10px;font-size:13px;color:var(--muted)">Note: This template simulates delivery. Replace integration with your payment gateway & auto-delivery logic.</div>
-      </div>
-    </div>
-  </div>  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const products = [
-      {id:1,title:'Angkor Hub - Pixel Art',price:'$12',desc:'Lobby inspired by Angkor, trees and sky',img:'https://placehold.co/600x360?text=Angkor+Hub',file:'downloads/angkor-hub.zip'},
-      {id:2,title:'Sky Lobby - Floating Isles',price:'$8',desc:'Small sky lobby with parkour',img:'https://placehold.co/600x360?text=Sky+Lobby',file:'downloads/sky-lobby.zip'},
-      {id:3,title:'Forest Spawn - Khmer Style',price:'$10',desc:'Forest spawn with Khmer-style temple',img:'https://placehold.co/600x360?text=Forest+Spawn',file:'downloads/forest-spawn.zip'}
-    ];
-
-    const grid = document.getElementById('productGrid');
-    products.forEach(p=>{
-      const card = document.createElement('div');card.className='card';
-      card.innerHTML = `
-        <img src="${p.img}" alt="${p.title}">
-        <h3>${p.title}</h3>
-        <div class="small">${p.desc}</div>
-        <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;margin-top:12px">
-          <div class="price">${p.price}</div>
-          <div style="display:flex;gap:8px">
-            <a class="btn" data-id="${p.id}" href="#" onclick="openBuy(event,${p.id})">Buy</a>
-            <a class="small" href="${p.file}" download>Preview/Download</a>
-          </div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-
-    let selectedProduct = null;
-    function openBuy(e,id){e.preventDefault();selectedProduct = products.find(x=>x.id===id);document.getElementById('modalTitle').textContent = 'Buy: '+selectedProduct.title;document.getElementById('modalDesc').textContent = selectedProduct.desc;document.getElementById('modal').classList.add('open');}
-    document.getElementById('closeModal').addEventListener('click',()=>document.getElementById('modal').classList.remove('open'));
-
-    document.getElementById('confirmBuy').addEventListener('click',()=>{
-      const name = document.getElementById('buyerName').value || 'Unknown';
-      const contact = document.getElementById('buyerContact').value || 'Not-provided';
-      const method = document.getElementById('paymentMethod').value;
-      // Simulate creating an order & delivering file link
-      const order = {id:Date.now(),product:selectedProduct,title:selectedProduct.title,price:selectedProduct.price,name,contact,method,delivered:false};
-      // Save order locally (replace with server-side order handling)
-      const orders = JSON.parse(localStorage.getItem('orders')||'[]');orders.push(order);localStorage.setItem('orders',JSON.stringify(orders));
-      alert('Order created! Sending download link to: '+contact+'\n(Template simulates delivery. Integrate real delivery logic.)');
-      document.getElementById('modal').classList.remove('open');
-    });
-
-    // Contact button opens Telegram
-    document.getElementById('btn-contact').addEventListener('click',()=>{window.open('https://t.me/yourtelegram','_blank')});
-  </script></body>
-    </html>
+    <script>
+        // JS for interactive effects (example: click alert)
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Server Lobby ធ្វើការទៅ: ' + btn.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
